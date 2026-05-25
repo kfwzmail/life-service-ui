@@ -60,13 +60,13 @@ async function save() {
     categoryId: categoryId.value,
     type: type.value,
     amount: Number(amount.value),
-    billTime: billTime.value + ':00',
+    billTime: billTime.value.replace('T', ' ') + ':00',
     remark: remark.value.trim() || undefined,
   }
 
   try {
     if (isEdit.value) {
-      await api.updateBill(props.bill.id, body)
+      await api.updateBill({ id: props.bill.id, ...body })
     } else {
       await api.createBill(body)
     }

@@ -13,7 +13,7 @@ const showTabs = computed(() => {
 })
 
 const title = computed(() => {
-  const map = { dashboard: '概览', bills: '账单', categories: '分类' }
+  const map = { dashboard: '概览', bills: '账单', stats: '统计', budgets: '预算', categories: '分类' }
   return map[route.name] || '记一笔'
 })
 </script>
